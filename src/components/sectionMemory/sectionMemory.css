@@ -120,5 +120,43 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-leather
     height: 40px; 
 
 }
+.sectionMemory article{
+      
+  height: 40vh;
+  display: grid;
 
+}
+.sectionMemory>div {
+  width: 25%;
+  height: 22vh;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 50px;
+  margin-left: 40px;
+}
+
+
+}
+
+
+
+@media (max-width:376px){
+
+    .sectionMemory article{
+      
+      height: 40vh;
+      display: grid;
+
+    }
+    .sectionMemory>div {
+      width: 25%;
+      height: 22vh;
+      display: flex;
+      justify-content: start;
+      align-items: start;
+      gap: 50px;
+      margin-left: 40px;
+    }
+   
 }

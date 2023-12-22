@@ -175,8 +175,18 @@
     top:70px;
   }
   .divbotonesinicio{
-    margin-left: 40px;
+    margin-left: 50px;
   }
 
+
+
+}
+@media (max-width:376px){
+  .divJuegoAhorcado{
+    margin-left: 30px;
+    justify-content: start;
+    gap: 10px;
+    margin-bottom: 50px;
+  }
 
 }
