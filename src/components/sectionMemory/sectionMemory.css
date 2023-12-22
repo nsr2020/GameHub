@@ -1,0 +1,124 @@
+
+
+
+.sectionMemory{
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e32600;
+background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+overflow: hidden;
+}
+
+.gift{
+  width: 150px;
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  transform: rotate(320deg);
+  animation: changeColor 5s infinite;
+  border-radius: 100%;
+}
+.gift:hover{
+  scale:1.1;
+}
+
+.sectionMemory article{
+  width: 60%;
+  height: 50vh;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 35px; 
+  margin-top: 10px;
+
+}
+.sectionMemory article div{
+  background-color: #c1d4ca;
+background-image: url("https://www.transparenttextures.com/patterns/dark-leather.png");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px; 
+  height: 70px; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 100%;
+}
+
+.carta{
+  width: 55px;
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+
+.sectionMemory>div {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  gap: 50px;
+  margin-left: 40px;
+}
+.sectionMemory button{
+  border: none;
+  color: #ffd700;
+  font-weight: bolder;
+  background-color: purple;
+  cursor: pointer;
+  padding: 10px 5px;
+  border-radius: 5px;
+  transition-property: all;
+  transition-duration: 0.5s;
+}
+.sectionMemory button:hover{
+  background-color: #ffd700;
+  color: purple;
+  scale: 1.1;
+}
+.showed{
+  opacity: 1;
+  animation: changeColor 2seg infinite;
+}
+@media(max-width:621px){
+
+  .gift{
+    width: 50px;
+    position: absolute;
+    left: 30px;
+    top: 300px;
+  }
+  .sectionMemory article{
+    width: 180px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 5px; 
+    margin-top: 20px;
+  
+  }
+  .carta{
+    width: 25px;
+  }
+  .sectionMemory>div {
+    width: 100%;
+    height: 12vh;
+    display: flex;
+  
+    margin-left: 40px;
+  }
+
+  .sectionMemory article div {
+    width: 40px; 
+    height: 40px; 
+
+}
+
+}
