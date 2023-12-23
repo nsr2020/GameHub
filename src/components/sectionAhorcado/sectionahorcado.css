@@ -2,7 +2,7 @@
 
 .sectionahorcado{
   width: 100%;
-  height: 80vh;
+  height: 90vh;
   background-image: url("https://res.cloudinary.com/dnju3aw4b/image/upload/v1703023830/Ahorcado/juego-el-ahorcado-enmiauladept_zxafu3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -122,6 +122,9 @@
 
 
 @media(max-width:1025px) and (min-width:767px){
+  .sectionahorcado{
+    height: 90vh;
+  }
   .imgift{
     width: 200px;
     top:120px;
@@ -171,32 +174,127 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-  
   }
   
 
 }
-@media(max-width:364px){
+@media only screen and (max-width: 541px) and (min-width:432px){
 
-  .divJuegoAhorcado{
-    flex-direction: column;
-  }
   .imgift{
-    top:70px;
+    width: 200px;
+    top:120px;
   }
-  .divbotonesinicio{
+  .divJuegoAhorcado{
+    margin-left: 50px;
+    justify-content: start;
+    gap: 30px;
+  }
+  .divpalabra{
+   
+    width: 350px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 5px;
+    gap: 6px;
+   
+  }
+  .divpalabra span{
+    border-bottom: 2px solid black;
+    width: 15px;
+    /* color: red; */
+    text-align: center;
+    
+  }
+  .divimg{
+    width: 300px;
+    height: 350px;
+    gap: 5px;
     margin-left: 50px;
   }
-
+  .divbotonesinicio{
+    margin-bottom: 50px;
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    gap: 10px;
+  }
+  .sectionahorcado{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
 
 
 }
-@media (max-width:376px){
-  .divJuegoAhorcado{
-    margin-left: 30px;
-    justify-content: start;
-    gap: 10px;
-    margin-bottom: 50px;
+@media  only screen and (min-width:359px) and (max-width:431px){
+  .imgift{
+    width: 200px;
+    top:120px;
   }
+  .divJuegoAhorcado{
+    margin-left: 50px;
+    justify-content: start;
+    gap: 30px;
+  }
+  .divpalabra{
+   
+    width: 250px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 5px;
+    gap: 6px;
+   
+  }
+  .divpalabra span{
+    border-bottom: 2px solid black;
+    width: 10px;
+    /* color: red; */
+    text-align: center;
+    
+  }
+  .divJuegoAhorcado{
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 30px;
+  }
+  .imgift{
+    width: 140px;
+    top: 20px;
+    left: 0px;
+  }
+
+  .divimg{
+    width: 250px;
+    height: 250px;
+    gap: 5px;
+    margin-left: 50px;
+  }
+  .divbotonesinicio{
+    margin-bottom: 50px;
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    gap: 10px;
+  }
+  .sectionahorcado{
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+
+
 
 }
