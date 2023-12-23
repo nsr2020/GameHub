@@ -119,9 +119,11 @@
   opacity: 0;
 }
 
-@media(max-width:844px){
+
+
+@media(max-width:1025px) and (min-width:767px){
   .imgift{
-    width: 100px;
+    width: 200px;
     top:120px;
   }
   .divJuegoAhorcado{
@@ -129,24 +131,32 @@
     justify-content: start;
     gap: 30px;
   }
-  .divpalabra{ 
-    width: 170px;
-    height: 100px;
-    gap: 4px;
+  .divpalabra{
+   
+    width: 350px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 5px;
+    gap: 6px;
+   
   }
   .divpalabra span{
-    font-size: 13px;
-    width: 6px;
+    border-bottom: 2px solid black;
+    width: 15px;
+    /* color: red; */
     text-align: center;
-  }
-  .divimg{
-    width: 150px;
-    height: 130px;
-    gap: 5px; 
+    
   }
   
-  .divimg img{
-    width: 80px;
+  
+  .divimg{
+    width: 300px;
+    height: 350px;
+    gap: 5px;
+    margin-left: 50px;
   }
   .divbotonesinicio{
     margin-bottom: 50px;

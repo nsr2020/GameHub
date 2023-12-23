@@ -5,7 +5,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 80vh;
+  height: 90vh;
   justify-content: center;
   align-items: center;
 }
@@ -40,11 +40,10 @@
 .divbotones{
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
   gap: 20px;
   margin-left: 80px;
-  
-  
 }
 
 .divizq>img{
@@ -88,15 +87,12 @@
         background-image: linear-gradient(to top, #ffffff, #f5f5f5);
           width: 600px;
           height: 300px;
-          max-height: 300px;
-   
       display: grid;
       grid-template-columns: repeat(15, 1fr);
         grid-template-rows: repeat(6, 1fr);
         gap: 5px;
       padding: 10px;
       margin-right: 50px;
-    
       border: 5px solid red;
       box-shadow: 12px 5px 15px 5px #FF2F55;
       border-radius: 5px;
@@ -111,17 +107,6 @@ width: 20px;
   align-items: center;
   padding: 2px;
 }
-/* .divbolatablero1{
-  border: 2px solid #FF2F55;
-  border-radius: 5px;
-}
-.divbolatablero2{
-  border: 2px solid #FF2F55;
-  border-radius: 5px;
-} */
-/* .imgbolatablero1{
-  opacity: 0.5;
-} */
 
 
 .boder{
@@ -136,65 +121,79 @@ width: 20px;
  
 }
 
-
-@media(max-width:787px){
+@media only screen and (max-width:1025px) and (min-width:767px){
   .sectionbingo{
-    margin-top: 10px;
-    justify-content: start;
-    align-items: start;
-    flex-direction: row-reverse;
-    gap: 5px;
+    flex-direction: column;
+    gap: 50px;
   }
   .divizq{
-    margin-top: 20px;
-    gap: 10px;
-  }
-  .divbotones{
-    margin-right: 290px;
+   width: 50%;
     display: flex;
-    flex-direction: column;
-  }
-  .divbotones button{
-    font-size: 6px;
-    width: 35px;
-    text-align: center;
+    flex-direction: row;
+  margin-right: 300px;
+   justify-content:center;
+   align-items: center;
+    margin-left: 150px;
+    margin-top: 50px;
+    gap: 100px;
   }
   .divizq>img{
-     display: flex;
-      width: 50px;
-      top: 290px;
-      left: 200px;
+    
+    width: 100px;
+    top: 80px;
+    left: 80px;
+
   }
- .divbola{
-  width: 50px;
-  height: 50px;
-  margin-left: -270px;
-  margin-top: 20px;
- }
- .divbola>img{
-  width: 40px;
- }
- .divtablero{
-width: 190px;
-height: 400px;
-min-height: 400px;
-grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(15, 1fr);
-  gap: 0px;
-padding: 0px;
-margin-right: 50px;
+  .divtablero{
+    margin-top: 100px;
+    width: 680px;
+  }
+  .divbola{
+    width: 100%;
+    height: 120px;
+  }
+  .imgbolacantada{
+    width: 60px;
+  }
 
 
 }
-.divtablero img{
-width: 15px;
-}
-.divtablero>div{
-display: flex;
-justify-content: center;
-align-items: center;
-padding: 2px;
-}
+
+
+@media only screen and (width:1024px) and (height:600px){
+  .sectionbingo{
+    flex-direction: column;
+    gap: 0px;
+  }
+  .divizq{
+   
+    display: flex;
+    flex-direction: row;
+    margin-right: 300px;
+   justify-content:center;
+   align-items: center;
+    margin-left: 150px;
+    margin-top: 20px;
+    gap: 70px;
+  }
+  .divizq>img{
+    
+    width: 100px;
+    top: 80px;
+    left: 80px;
+
+  }
+  .divtablero{
+    margin-top: 20px;
+  }
+  .divbola{
+    width: 150px;
+    height: 110px;
+  }
+  .imgbolacantada{
+    width: 70px;
+  }
+
 
 }
 @media (max-width:1025px){
@@ -202,67 +201,121 @@ padding: 2px;
     margin-left: 5px;
   }
 }
-@media (max-width: 821px){
-  .divbotones button{
-      width: 35px;
-      font-size: 10px;
+
+
+
+@media only screen and (max-width:431px) and (min-width:359px){
+
+
+  .sectionbingo{
+    flex-direction: column;
   }
   .divtablero{
-    margin-top: 120px;
+    display: none;
   }
-  .divbola{
+  .divizq{
     margin-left: -30px;
   }
-}
-
-@media (max-width: 769px){
-  .divbotones button{
-    width: 49px;
-    font-size: 10px;
-}
-.divbotones{
-  margin-left: 190px;
-}
-.divtablero{
-  margin-top: 120px;
-  margin-left: 45px;
-}
-.divbola{
-  margin-left: -30px;
-}
-.divizq>img{
-
-   width: 50px;
-   top: 290px;
-   left: 290px;
-}
-}
-@media(max-width:413px){
   .divizq>img{
-    top: 390px;
-  }
-  .divbola{
-    margin-right:180px ;
-  }
-  .divbotones button{
-    width: 55px;
-    font-size: 10px;
-}
-
-}
-@media (max-width:431px){
-  .divizq>img{
-    top: 390px;
-  }
-  .divbola{
-    margin-right:180px ;
+    
+    width: 100px;
+    top: 60px;
+    left: 60px;
   }
 
+
 }
-@media (max-width: 376px){
+
+@media only screen and (width:540px) and (height:720px){
+  .sectionbingo{
+    flex-direction: column;
+    gap: 25px;
+  }
   .divtablero{
-  margin-top: 40px;
+    width: 530px;
+    margin-left: 45px;
+    padding: 0;
+    gap: 0;
   }
+  .divizq{
+    margin-left: -30px;
+    gap: 20px;
+  }
+  .divizq>img{
+    
+    width: 100px;
+    top: 40px;
+    left: 20px;
+  }
+
+}
+@media only screen and (width:720px) and (height:540px){
+  .sectionbingo{
+    flex-direction: column;
+    gap: 25px;
+  }
+  .divtablero{
+    width: 530px;
+    margin-left: 45px;
+    padding: 0;
+    gap: 0;
+    margin-bottom: 15px;
+  }
+  .divizq{
+    margin-left: -30px;
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+  .divizq>img{
+    
+    width: 100px;
+    top: 40px;
+    left: 20px;
+  }
+  .divbotones{
+    margin-top: 10px;
+  }
+
+
+}
+
+@media only screen and (width:280px) {
+  .sectionbingo{
+    flex-direction: column;
+  }
+  .divtablero{
+    display: none;
+  }
+  .divizq{
+    margin-left: -30px;
+  }
+  .divizq>img{
+    
+    width: 70px;
+    top: 60px;
+    left: 60px;
+  }
+
+}
+@media(height:280px){
+  .sectionbingo{
+    flex-direction: column;
+  }
+  .divtablero{
+    display: none;
+  }
+  .divizq{
+    margin-left: -30px;
+    gap: 10px;
+  }
+  .divizq>img{
+    
+    width: 70px;
+    top: 60px;
+    left: 60px;
+  }
+
+
 }
 
 

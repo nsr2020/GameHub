@@ -18,7 +18,7 @@ const imgBolaCantada = document.createElement("img")
 //!En esta funcion se crea todo el contenido de la section Bingo 
 
 export const createSectionBingo = (array) =>{
-  console.log("Entrando en createSectionBingo");
+ 
   sectionBingo.innerHTML = ""
   resetSeleccionado()
   window.speechSynthesis.cancel();
@@ -40,16 +40,36 @@ export const createSectionBingo = (array) =>{
   imgBolaCantada.src = "https://res.cloudinary.com/dnju3aw4b/image/upload/v1703009635/UCDM/GamesHub/imagenbingoazar_zxjqyu.png"
   imgBolaCantada.classList.add("imgbolacantada")
 
-  botonStart.textContent= "Comenzar"
-  botonPause.textContent = "Pausar"
-  botonResume.textContent = "Reanudar"
-  botonStop.textContent = "Stop"
+
+  botonStart.textContent= "▶"
+  botonPause.textContent= "⏸"
+  botonResume.textContent="⏩"
+  botonStop.textContent ="🛑"
+ 
+  
   botonStart.classList.add("botonstart")
   botonPause.classList.add("botonpause")
   botonResume.classList.add("botonresume")
   botonPause.disabled = true
   botonResume.disabled = true
   botonStop.disabled = true
+
+ /*  const iconos = document.createElement('i');
+  iconos.classList.add('fas', 'fa-play');
+  botonStart.appendChild(iconos);
+
+  const iconop = document.createElement("i")
+  iconop.classList.add("fas" ,"fa-pause")
+  botonPause.append(iconop)
+
+  const iconore =document.createElement("i")
+  iconore.classList.add("fas","fa-forward")
+  botonResume.append(iconore)
+
+
+  const iconostop = document.createElement("i")
+  iconostop.classList.add("fas","fa-stop")
+  botonStop.append(iconostop) */
 
 let contador = 1;
   for(const numero of array){
@@ -80,6 +100,9 @@ let contador = 1;
         sectionBingo.appendChild(divTablero)
 
       document.body.appendChild(sectionBingo)
+
+     
+      
 
 //!Eventos para start, pause ,resume y el stop del bingo
       botonStart.addEventListener("click", ()=>{
@@ -114,6 +137,7 @@ let contador = 1;
             stop = false;
             startBingo(numerosbingo, estado, stop);
           }
+        
 
       })
 

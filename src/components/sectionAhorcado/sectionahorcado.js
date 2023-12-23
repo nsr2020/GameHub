@@ -37,6 +37,7 @@ export const createSectionAhorcado = (array) =>{
   botonStart.textContent = "START"
   botonStop.textContent = "STOP"
   botonStart.classList.add("botonStart")
+  /* divPalabra.contentEditable = true; */
 
 let contador = 1;
   for( const foto of array){
@@ -49,6 +50,10 @@ let contador = 1;
     divImg.append(img)
     contador++;
   }
+
+  divPalabra.addEventListener("click", () => {
+    divPalabra.focus();
+  });
 
 
   botonStart.addEventListener("click", () =>{
