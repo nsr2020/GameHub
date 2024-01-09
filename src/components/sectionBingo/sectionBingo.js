@@ -1,23 +1,23 @@
-import "../../data/numerosBingo/numerosbingo"
+/* import "../../data/numerosBingo/numerosbingo"
 import { numerosbingo } from "../../data/numerosBingo/numerosbingo"
 import { activarBotonAhorcado, activarBotonAtras, activarBotonBingo, activarBotonMemory, desactivarBotonAhorcado, desactivarBotonAtras, desactivarBotonBingo, desactivarBotonMemory } from "../header/header"
 
-import "./sectionBingo.css"
+import "./sectionBingo.css" */
 
 
 //!ESto lo puse fuera como scope global ya que me estaba dando problemas a la hora de que reconociese la clase en otras funciones y decidí ponerlo así, no obstante, se que podría haber optado por enviarlo a través de una función, pero la verdad que cómo me estaba dándo muchos fallos, lo deje así!!
 
-const sectionBingo = document.createElement("section")
+/* const sectionBingo = document.createElement("section")
 sectionBingo.classList.add("sectionbingo")
 const botonStart = document.createElement("button")
 const botonPause = document.createElement("button")
 const botonResume = document.createElement("button")
 const botonStop = document.createElement("button")
-const imgBolaCantada = document.createElement("img")
+const imgBolaCantada = document.createElement("img") */
 
 //!En esta funcion se crea todo el contenido de la section Bingo 
 
-export const createSectionBingo = (array) =>{
+/* export const createSectionBingo = (array) =>{
  
   sectionBingo.innerHTML = ""
   resetSeleccionado()
@@ -54,29 +54,12 @@ export const createSectionBingo = (array) =>{
   botonResume.disabled = true
   botonStop.disabled = true
 
- /*  const iconos = document.createElement('i');
-  iconos.classList.add('fas', 'fa-play');
-  botonStart.appendChild(iconos);
-
-  const iconop = document.createElement("i")
-  iconop.classList.add("fas" ,"fa-pause")
-  botonPause.append(iconop)
-
-  const iconore =document.createElement("i")
-  iconore.classList.add("fas","fa-forward")
-  botonResume.append(iconore)
-
-
-  const iconostop = document.createElement("i")
-  iconostop.classList.add("fas","fa-stop")
-  botonStop.append(iconostop) */
-
 let contador = 1;
   for(const numero of array){
     const divbolatablero = document.createElement("div")
     const imgBolaTablero = document.createElement("img")
 
-    const idBola = "bola" + numero.id; // Generar un ID único para cada bola
+    const idBola = "bola" + numero.id; 
 
     imgBolaTablero.classList.add("imgbolatablero", idBola);
     divbolatablero.classList.add("divbolatablero", idBola);
@@ -104,7 +87,7 @@ let contador = 1;
      
       
 
-//!Eventos para start, pause ,resume y el stop del bingo
+
       botonStart.addEventListener("click", ()=>{
 
         const imgBolaTablero = document.querySelectorAll(".imgbolatablero")
@@ -132,7 +115,7 @@ let contador = 1;
 
        
           if (estado === "esperando") {
-            // Resto del código...
+            
             estado = "iniciado";
             stop = false;
             startBingo(numerosbingo, estado, stop);
@@ -162,7 +145,7 @@ let contador = 1;
             botonResume.disabled = true;
             botonPause.disabled = false;
             botonStop.disabled = true;
-            // Reanudar el juego
+            
             startBingo(numerosbingo, estado, false);
           }
           
@@ -184,43 +167,43 @@ let contador = 1;
 } )
 
 
-}
+} */
 
 //---------------botones del header para cambiar de section o ir al principio--------------------------------------
 //!Estas funciones basicamente realizan el limpiado de las sectionBingo cuando se cambie de un juego a otro.
-export const apagarsectionbingo = () =>{
+/* export const apagarsectionbingo = () =>{
   sectionBingo.style.display="none"
   sectionBingo.innerHTML =""
   clearInterval(intervalId)
  estado = "esperando"
  stop =false;
   
-}
-export const encendersectionbingo = () =>{
+} */
+/* export const encendersectionbingo = () =>{
   
   resetSeleccionado()
   sectionBingo.innerHTML=""
   clearInterval(intervalId)
   estado = "esperando"
   sectionBingo.style.display = "flex"
-}
+} */
 //-------------------------------------------------------------funciones para start, pausar y reanudar el bingo-----------------------
 
-let intervalId;
+/* let intervalId;
 let utterance;
 
 let estado ="esperando"
 let stop = false;
-
+ */
 //! Función para generar el cantado de los numeros con voz
-const createUtterance = (text) => {
+/* const createUtterance = (text) => {
   utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = 'es-ES';
 };
-
+ */
      
-//!En esta parte es el boton Start que va a estar desactivado hasta que se clique stop, aqui le paso el array de numeros, el estado en ql que esta el juego y si está o no finalizado, para de esta forma poder controlar los botones de pausa, reanudar y stop
-export const startBingo = (array, estado, finalizado) => {
+
+/* export const startBingo = (array, estado, finalizado) => {
   console.log("Entrando en startBingo", estado, finalizado);
       let contador= 0;
      
@@ -257,7 +240,7 @@ export const startBingo = (array, estado, finalizado) => {
           
             return; 
           }
-          //!En esta parte si el juego esta iniciado, entonces procede a mostrar la bola que haya salido y pintarla en el tablero
+          
           const imgSrc = array[numeroAleatorio].img;
 
          
@@ -293,43 +276,43 @@ export const startBingo = (array, estado, finalizado) => {
 
       }
 }
-
+ */
 
 
 //!En esta función pausamos el juego y se activa reanudar y también el botón de Stop
-const pausarBingo = (estado) =>{
+/* const pausarBingo = (estado) =>{
   console.log("Pausando el bingo", estado);
 stop = false
 startBingo(numerosbingo, estado, stop)
-}
+} */
 
 //!En esta función se reanuda el juego y sólo esta activa si presionas pausar, sinno esta desactivada.
-const reanudarBingo = (estado) =>{
+/* const reanudarBingo = (estado) =>{
   console.log("Reanudando el bingo", estado);
   stop = false
   startBingo(numerosbingo, estado, stop);
 
-}
+} */
 
 //!Esta función va enlazada con el botonStop y detiene el juego, 
-const pararBingo = (estado) => {
+/* const pararBingo = (estado) => {
   alert("El bingo ha sido detenido")
   stop = true;
   clearInterval(intervalId)
   createSectionBingo(numerosbingo);
   return;
-};
+}; */
 
 //!Este apartado es para poner en false la propiedad del array numerosbingo para que empiezen con este valor cuando se inice una nueva partida 
-const resetSeleccionado = () => {
+/* const resetSeleccionado = () => {
   for (const numero of numerosbingo) {
     numero.selected = false;
   }
-};
+}; */
 
 
 //! Aqui estamos obteniendo los numeros aleatorios y que no se repitan
-const obtenerNumeroAleatorio = (max) => {
+/* const obtenerNumeroAleatorio = (max) => {
  
   const todosLosNumerosSeleccionados = numerosbingo.every(numero => numero.selected);
   if (todosLosNumerosSeleccionados) {
@@ -347,4 +330,4 @@ const obtenerNumeroAleatorio = (max) => {
 
   return numeroAleatorio;
 };
-
+ */

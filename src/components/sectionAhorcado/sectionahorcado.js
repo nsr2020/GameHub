@@ -2,7 +2,7 @@
 
 import { fotosAhorcado } from "../../data/fotosahorcado/fotosahorcado"
 import { words } from "../../data/palabras/palabras"
-import { activarBotonAhorcado, activarBotonAtras, activarBotonBingo, activarBotonMemory, desactivarBotonAhorcado, desactivarBotonAtras, desactivarBotonBingo, desactivarBotonMemory } from "../header/header"
+import { activarBotonAhorcado, activarBotonAtras, activarBotonMemory, activarBotonPPt, desactivarBotonAhorcado, desactivarBotonAtras, desactivarBotonMemory, desactivarBotonPpt } from "../header/header"
 import "./sectionahorcado.css"
 
 
@@ -26,8 +26,17 @@ export const createSectionAhorcado = (array) =>{
  const divJuegoAhorcado = document.createElement("div")
  divJuegoAhorcado.classList.add("divJuegoAhorcado")
   const divImg = document.createElement("div")
+  const divPGeneralWords = document.createElement("div")
+  divPGeneralWords.classList.add("divGeneral")
+  const h4secret = document.createElement("h4")
   const divPalabra = document.createElement("div")
+  const h4used = document.createElement("h4")
+  const divPused= document.createElement("div")
+  divPused.classList.add("divUsed")
  
+
+  h4secret.textContent= "Palabra Secreta"
+  h4used.textContent = "Letras Usadas"
 
   divImg.classList.add("divimg")
   divPalabra.classList.add("divpalabra")
@@ -37,7 +46,7 @@ export const createSectionAhorcado = (array) =>{
   botonStart.textContent = "START"
   botonStop.textContent = "STOP"
   botonStart.classList.add("botonStart")
-  /* divPalabra.contentEditable = true; */
+
 
 let contador = 1;
   for( const foto of array){
@@ -61,7 +70,7 @@ let contador = 1;
       botonStop.style.display = "flex"
 
     desactivarBotonAtras()
-    desactivarBotonBingo()
+    desactivarBotonPpt()
     desactivarBotonMemory()
     desactivarBotonAhorcado()
 
@@ -75,7 +84,7 @@ let contador = 1;
 
 
     activarBotonAtras()
-    activarBotonBingo()
+    activarBotonPPt()
     activarBotonMemory()
 
     endGame()
@@ -88,7 +97,12 @@ let contador = 1;
 
  sectionahorcado.append(divBotonesInicio)
 
- divJuegoAhorcado.append(divPalabra)
+ divPGeneralWords.append(h4used)
+ divPGeneralWords.append(divPused)
+ divPGeneralWords.append(h4secret)
+ divPGeneralWords.append(divPalabra)
+
+ divJuegoAhorcado.append(divPGeneralWords)
  divJuegoAhorcado.append(divImg)
  sectionahorcado.append(divJuegoAhorcado)
 
@@ -141,8 +155,10 @@ const wrongLetter = () => {
     const imgElement1 = document.querySelector(".img6")
     imgElement1.style.opacity = 1;
 
+    const palabraSinComillas = sendRightWord(selectedword);
+   
     setTimeout(() => {
-      alert("¡Ahorcado! Has alcanzado el límite de intentos.");
+      alert(`Ahorcado!!  La palabra correcta es: ${palabraSinComillas}` )
       endGame();
     }, 1000);
   }
@@ -155,7 +171,7 @@ const endGame = () =>{
  
  createSectionAhorcado(fotosAhorcado)
   activarBotonAtras()
-  activarBotonBingo()
+
   activarBotonMemory()
 botonStart.style.display="flex"
 botonStop.style.display="none"
@@ -192,12 +208,22 @@ const correctLetter = letter =>{
 
 }
 
+const addLetterUsed = (letter) =>{
+  const divPused = document.querySelector(".divUsed")
+  let span = document.createElement("span")
+
+  span.textContent = letter
+  divPused.append(span)
+}
+
 //!Aqui controlamos si la letra introducida esta en la palabra para enviarla a una funcion o a otra
 const letterInput = (letter) => {
   if (selectedword.join("").includes(letter)) {
     correctLetter(letter);
+    addLetterUsed(letter);
   } else {
     wrongLetter();
+    addLetterUsed(letter);
   }
 };
 
@@ -224,6 +250,7 @@ export const startAhorcado = () =>{
   activarOpacidadFotos()
 
   document.addEventListener("keydown", letterEvent);
+sendRightWord(selectedword)
 }
 
 //!Aqui obtenemos la palabra al azar
@@ -231,9 +258,17 @@ const obtenerPalabraRandom = array => {
   return array[Math.floor(Math.random() * array.length)].nombre.toUpperCase().split("");
 };
 
+//!Aqui vamos a pasar la palabra sin comillas par que pueda ser usada
+const sendRightWord = (word) =>{
+return word.join("");
+ 
+}
+
+
 //!en esta función pintamos en el div con spans la palabra que hayamos recibido.
 
   const obtenerPalabraPintada = (palabra) => {
+  
     const divPalabra = document.querySelector(".divpalabra");
     divPalabra.innerHTML = "";
     palabra.forEach((letter) => {
@@ -243,6 +278,7 @@ const obtenerPalabraRandom = array => {
       letterElement.classList.add("hidden");
       divPalabra.append(letterElement);
     });
+
   };
 
   

@@ -4,7 +4,7 @@ header{
   height: 10vh;
   display: none;
   justify-content: space-around;
-  padding: 10px;
+  padding: 0px;
   border: 5px solid purple;
   background-image: url("https://res.cloudinary.com/dnju3aw4b/image/upload/v1702778355/UCDM/GamesHub/fondoj_trdhsy.jpg");
   background-repeat: no-repeat;
@@ -15,22 +15,34 @@ header nav{
   display: flex;
   width: 100%;
   justify-content: space-around;
-  gap: 10px;
-  /* padding: 10px; */
+  align-items: center;
+  padding: 10px;
+ 
+ 
+
 }
 header img {
   width: 50px;
+  height: 40px;
   cursor: pointer;
 }
 
+
 @media(max-width: 441px){
   header img{
-    width: 25px;
+    width: 30px;
+    height: 30px;
+   
   }
   header{
     justify-content: start;
     align-items: start;
-    padding: 20px;
+    gap: 5px;
+  
+  
+  }
+  header nav{
+    padding: 10px;
     gap: 5px;
   }
    

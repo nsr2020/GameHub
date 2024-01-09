@@ -1,5 +1,4 @@
 .app {
-  
  width: 100%;
   background-image: url("https://res.cloudinary.com/dnju3aw4b/image/upload/v1702764946/UCDM/GamesHub/585fc55ecb11b227491c35a0_g6aswk.png");
   background-repeat: no-repeat;
@@ -11,7 +10,13 @@
  align-items: center;
  gap: 80px;
  overflow: hidden;
+ animation: changeSize, 2s, forwards, 1s;
+}
+@keyframes changeSize{
 
+to{
+  width:0%;
+}
 }
 
 .app img{
@@ -105,7 +110,7 @@
   font-weight: bolder;
   text-decoration: none;
 }
-.app h1:hover{
+.app h1:active{
   color: #e12929;
   transform: scale(1.2);
 }
@@ -119,7 +124,7 @@
   transition-property:color, transform, background-color;
   transition-duration: 0.5s;
 }
-.app button:hover{
+.app button:active{
   background-color: #e12929;
   color: #053760;
   scale: 1.3;

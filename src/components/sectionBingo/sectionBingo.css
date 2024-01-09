@@ -1,9 +1,8 @@
 .sectionbingo{
   position: relative;
   display: none;
-  background-image: url("https://res.cloudinary.com/dnju3aw4b/image/upload/v1702836509/UCDM/GamesHub/fondojss_shho1q.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #eef5e4;
+  background-image: url("https://www.transparenttextures.com/patterns/dark-brick-wall.png");
   width: 100%;
   height: 90vh;
   justify-content: center;
@@ -21,14 +20,14 @@
 }
 .divbotones button{
  border: none;
- color: #ffd700;
+ color: #ffffff;
  font-weight: bolder;
  background-color: purple;
  cursor: pointer;
  padding: 10px 5px;
  border-radius: 5px;
  transition-property: all;
- transition-duration: 0.5s;
+ transition-duration: 1s;
 }
 .divbotones button:hover{
   background-color: #ffd700;
@@ -64,9 +63,6 @@
  display: flex;
 
 }
-
-
-
 
 .divbola{
   background-image: linear-gradient(to top, #f5f5dc, #ffd700);
@@ -117,205 +113,22 @@ width: 20px;
   justify-content: center;
   align-items: center;
   width: 31px;
-  /* border: 4px solid black; */
+  
  
 }
 
-@media only screen and (max-width:1025px) and (min-width:767px){
-  .sectionbingo{
-    flex-direction: column;
-    gap: 50px;
-  }
-  .divizq{
-   width: 50%;
-    display: flex;
-    flex-direction: row;
-  margin-right: 300px;
-   justify-content:center;
-   align-items: center;
-    margin-left: 150px;
-    margin-top: 50px;
-    gap: 100px;
-  }
-  .divizq>img{
-    
-    width: 100px;
-    top: 80px;
-    left: 80px;
-
-  }
-  .divtablero{
-    margin-top: 100px;
-    width: 680px;
-  }
-  .divbola{
-    width: 100%;
-    height: 120px;
-  }
-  .imgbolacantada{
-    width: 60px;
-  }
-
-
-}
-
-
-@media only screen and (width:1024px) and (height:600px){
-  .sectionbingo{
-    flex-direction: column;
-    gap: 0px;
-  }
-  .divizq{
-   
-    display: flex;
-    flex-direction: row;
-    margin-right: 300px;
-   justify-content:center;
-   align-items: center;
-    margin-left: 150px;
-    margin-top: 20px;
-    gap: 70px;
-  }
-  .divizq>img{
-    
-    width: 100px;
-    top: 80px;
-    left: 80px;
-
-  }
-  .divtablero{
-    margin-top: 20px;
-  }
-  .divbola{
-    width: 150px;
-    height: 110px;
-  }
-  .imgbolacantada{
-    width: 70px;
-  }
-
-
-}
-@media (max-width:1025px){
-  .divbotones{
-    margin-left: 5px;
-  }
-}
 
 
 
-@media only screen and (max-width:431px) and (min-width:359px){
 
 
-  .sectionbingo{
-    flex-direction: column;
-  }
-  .divtablero{
-    display: none;
-  }
-  .divizq{
-    margin-left: -30px;
-  }
-  .divizq>img{
-    
-    width: 100px;
-    top: 60px;
-    left: 60px;
-  }
 
 
-}
-
-@media only screen and (width:540px) and (height:720px){
-  .sectionbingo{
-    flex-direction: column;
-    gap: 25px;
-  }
-  .divtablero{
-    width: 530px;
-    margin-left: 45px;
-    padding: 0;
-    gap: 0;
-  }
-  .divizq{
-    margin-left: -30px;
-    gap: 20px;
-  }
-  .divizq>img{
-    
-    width: 100px;
-    top: 40px;
-    left: 20px;
-  }
-
-}
-@media only screen and (width:720px) and (height:540px){
-  .sectionbingo{
-    flex-direction: column;
-    gap: 25px;
-  }
-  .divtablero{
-    width: 530px;
-    margin-left: 45px;
-    padding: 0;
-    gap: 0;
-    margin-bottom: 15px;
-  }
-  .divizq{
-    margin-left: -30px;
-    gap: 10px;
-    margin-bottom: 25px;
-  }
-  .divizq>img{
-    
-    width: 100px;
-    top: 40px;
-    left: 20px;
-  }
-  .divbotones{
-    margin-top: 10px;
-  }
 
 
-}
-
-@media only screen and (width:280px) {
-  .sectionbingo{
-    flex-direction: column;
-  }
-  .divtablero{
-    display: none;
-  }
-  .divizq{
-    margin-left: -30px;
-  }
-  .divizq>img{
-    
-    width: 70px;
-    top: 60px;
-    left: 60px;
-  }
-
-}
-@media(height:280px){
-  .sectionbingo{
-    flex-direction: column;
-  }
-  .divtablero{
-    display: none;
-  }
-  .divizq{
-    margin-left: -30px;
-    gap: 10px;
-  }
-  .divizq>img{
-    
-    width: 70px;
-    top: 60px;
-    left: 60px;
-  }
 
 
-}
+
+
 
 

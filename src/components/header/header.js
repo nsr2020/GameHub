@@ -1,9 +1,11 @@
 import { cartas } from "../../data/cartas"
 import { fotosAhorcado } from "../../data/fotosahorcado/fotosahorcado"
-import { numerosbingo } from "../../data/numerosBingo/numerosbingo"
+import { fotosppt } from "../../data/fotosppt/fotosppt"
+/* import { numerosbingo } from "../../data/numerosBingo/numerosbingo" */
 import { createSectionAhorcado, apagarSectionAhorcado,encenderSectionAhorcado } from "../sectionAhorcado/sectionahorcado"
-import { apagarsectionbingo, createSectionBingo, encendersectionbingo, startBingo } from "../sectionBingo/sectionBingo"
+/* import { apagarsectionbingo, createSectionBingo, encendersectionbingo, startBingo } from "../sectionBingo/sectionBingo" */
 import { apagarSectionMemory, createsectionMemory, encenderSectionMemory } from "../sectionMemory/sectionMemory"
+import { apagarSectionPpt, createSectionPpt, encenderSectionPpt } from "../sectionPpt/sectionppt"
 import "./header.css"
 
 
@@ -20,12 +22,12 @@ export const createHeader = ()=>{
   header.classList.add("header")
 
   img4.src = "https://res.cloudinary.com/dnju3aw4b/image/upload/v1702777568/UCDM/GamesHub/flecha-hacia-atras_ijswt9.png"
-  img1.src = "https://res.cloudinary.com/dnju3aw4b/image/upload/v1702776884/UCDM/GamesHub/bingo_yrwlz6.png"
+  img1.src = "https://res.cloudinary.com/dnju3aw4b/image/upload/v1704793104/ppt/58ff7d1416ae4b3fc58f481b_nao9om.png"
   img2.src = "https://res.cloudinary.com/dnju3aw4b/image/upload/v1702776883/UCDM/GamesHub/horca_jrudjw.png"
   img3.src = "https://res.cloudinary.com/dnju3aw4b/image/upload/v1702776886/UCDM/GamesHub/pregunta_zb0we3.png"
 
   img4.classList.add("boton-atras")
-  img1.classList.add("boton-bingo")
+  img1.classList.add("boton-ppt")
   img2.classList.add("boton-ahorcado")
   img3.classList.add("boton-mgame")
 
@@ -41,30 +43,26 @@ export const createHeader = ()=>{
   divApp.style.display ="flex"
   const header = document.querySelector("header")
   header.style.display="none"
- apagarsectionbingo()
+apagarSectionPpt()
  apagarSectionAhorcado()
  apagarSectionMemory()
  
 })
 
 
-//acceso a section bingo
+
 
 img1.addEventListener("click", ()=>{
   const divApp = document.querySelector(".app")
   divApp.style.display ="none"
-  encendersectionbingo()
+
   apagarSectionAhorcado()
   apagarSectionMemory()
-  createSectionBingo(numerosbingo)
-
-
-  desactivarBotonBingo()
+  encenderSectionPpt()
+  createSectionPpt(fotosppt)
   activarBotonAhorcado()
   activarBotonMemory()
   activarBotonAtras()
-
-  
 })
 
 //acceso al ahorcado
@@ -73,13 +71,13 @@ img2.addEventListener("click", ()=>{
   const divApp = document.querySelector(".app")
   divApp.style.display ="none"
   encenderSectionAhorcado()
-  apagarsectionbingo()
+apagarSectionPpt()
   apagarSectionMemory()
   createSectionAhorcado(fotosAhorcado)
 
   desactivarBotonAhorcado()
   activarBotonAtras()
-  activarBotonBingo()
+activarBotonPPt()
   activarBotonMemory()
  
 })
@@ -89,13 +87,13 @@ img3.addEventListener("click", ()=>{
   const divApp = document.querySelector(".app")
   divApp.style.display ="none"
   encenderSectionMemory()
-  apagarsectionbingo()
+apagarSectionPpt()
   apagarSectionAhorcado()
   createsectionMemory(cartas)
 
   desactivarBotonMemory()
   activarBotonAhorcado()
-  activarBotonBingo()
+activarBotonPPt()
   activarBotonAtras()
 
 })
@@ -105,7 +103,7 @@ document.body.appendChild(header)
 }
 
 
-//Todos estos botones sirven para la activación y desactivación de cada uno de ellos, en base de si un juego está activo o no, para que no interfiera en el proceso de cada juego, si en cada juego le damos al botón de stop, todos los imagenes excepto la que propia del juego dónde estés se activarán para que pueda cambiar de section si lo deseas.
+//Todos estos botones sirven para la activación y desactivación de cada uno de ellos, en base de si un juego está activo o no, para que no interfiera en el proceso de cada juego, si en cada juego le damos al botón de stop, todos las imagenes excepto la que propia del juego dónde estés se activarán para que pueda cambiar de section si lo deseas.
 
 
 export const activarBotonAtras = () =>{
@@ -121,15 +119,15 @@ export const desactivarBotonAtras = () =>{
 
 }
 
-export const activarBotonBingo = () =>{
+export const activarBotonPPt = () =>{
 
-  const botonBingo = document.querySelector(".boton-bingo")
+  const botonBingo = document.querySelector(".boton-ppt")
   botonBingo.style.pointerEvents ="auto"
 
 }
-export const desactivarBotonBingo = () =>{
+export const desactivarBotonPpt = () =>{
 
-  const botonBingo = document.querySelector(".boton-bingo")
+  const botonBingo = document.querySelector(".boton-ppt")
   botonBingo.style.pointerEvents ="none"
 
 }

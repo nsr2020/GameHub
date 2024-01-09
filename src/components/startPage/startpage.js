@@ -1,7 +1,7 @@
-import { activarBotonAhorcado, activarBotonAtras, activarBotonBingo, activarBotonMemory } from "../header/header"
+import { activarBotonAhorcado, activarBotonAtras, activarBotonMemory, activarBotonPPt } from "../header/header"
 import { apagarSectionAhorcado } from "../sectionAhorcado/sectionahorcado"
-import { apagarsectionbingo } from "../sectionBingo/sectionBingo"
 import { apagarSectionMemory } from "../sectionMemory/sectionMemory"
+import { apagarSectionPpt } from "../sectionPpt/sectionppt"
 import "./startpage.css"
 
 //En esta section creo la página de inicio de nuestro juego dónde hay una animación de dados que si haces hover sobre ellos rotan y la escala se hace mayor, y el botón de comenzar que te lleva a un header con diferentes sections de juegos, en este juego he optado por hacer un Bingo, un Ahorcado y un Memory Game.
@@ -32,12 +32,12 @@ botonstart.textContent= "START"
 
     const header = document.querySelector(".header")
     header.style.display= "flex"
-    apagarsectionbingo()
+    apagarSectionPpt()
     apagarSectionAhorcado()
     apagarSectionMemory()
 
     activarBotonAtras()
-    activarBotonBingo()
+    activarBotonPPt()
     activarBotonAhorcado()
     activarBotonMemory()
 

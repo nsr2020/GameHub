@@ -6,16 +6,16 @@
   width: 100%;
   height: 90vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  flex-direction: row-reverse;
+  justify-content: center;
   align-items: center;
   background-color: #e32600;
-background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
-overflow: hidden;
+  background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+  overflow: hidden;
 }
 
 .gift{
-  width: 150px;
+  width: 50px;
   position: absolute;
   left: 30px;
   top: 30px;
@@ -28,23 +28,23 @@ overflow: hidden;
 }
 
 .sectionMemory article{
-  width: 60%;
+  width: 80%;
   height: 50vh;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  gap: 35px; 
-  margin-top: 10px;
+  gap: 25px; 
+ 
 
 }
 .sectionMemory article div{
-  background-color: #c1d4ca;
+  background-color: #923e50;
 background-image: url("https://www.transparenttextures.com/patterns/dark-leather.png");
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 70px; 
-  height: 70px; 
+  width: 60px; 
+  height: 60px; 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -52,150 +52,139 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-leather
 }
 
 .carta{
-  width: 55px;
+  width: 45px;
   display: flex;
   opacity: 0;
   transition: opacity 0.8s;
 }
 
-.sectionMemory>div {
-  width: 100%;
+.divbotones{
+  width: 200px;
   height: 15vh;
   display: flex;
-  justify-content: start;
-  align-items: start;
-  gap: 50px;
-  margin-left: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-left: 20px;
 }
+.divspan{
+  margin-top: 20px;
+  width: 60%;
+  height: 100px;
+ 
+  color: yellow;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+}
+
+.divspan span{
+  color: rgb(3, 7, 4);
+  background-color: transparent;
+  font-size: 28px;
+  font-weight: bold;
+  animation: amarillo 2s infinite;
+
+}
+
+@keyframes amarillo{
+0%{
+  box-shadow: 5px 10px yellow;
+}
+25%{
+  box-shadow: 5px 10px 15px yellow;
+}
+50%{
+  box-shadow: 5px 10px 15px 20px yellow;
+}
+75%{
+  box-shadow: 5px 10px 15px 20px 25px yellow;
+}
+100%{
+  box-shadow:5px 10px 15px 20px 25px 30px yellow ;
+}
+  
+}
+
 .sectionMemory button{
   border: none;
-  color: #ffd700;
+  color: rgb(97, 15, 152);
   font-weight: bolder;
-  background-color: purple;
+  background-color:#e32600;
   cursor: pointer;
   padding: 10px 5px;
-  border-radius: 5px;
+  border-radius: 20px;
   transition-property: all;
   transition-duration: 0.5s;
 }
 .sectionMemory button:hover{
-  background-color: #ffd700;
-  color: purple;
+  background-color:rgb(97, 15, 152);
+  color: #e32600;
   scale: 1.1;
+}
+.sectionMemory button:last-of-type{
+  display: none;
 }
 .showed{
   opacity: 1;
   animation: changeColor 2seg infinite;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1025px) {
+@media(max-width:671px){
   .sectionMemory article{
+    margin-left: -30px;
+  }
+
+  .divbotones{
+    margin-left: -50px;
+  }
+
+  .sectionMemory article{
+  
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 15px; 
+    margin-top: -100px;
    
-    margin-top: 180px;
   
   }
-  .sectionMemory>div {
-    width:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   height: auto;
-   margin-bottom: 100px;
-  }
-  .gift{
-    width: 120px;
-  }
+
   
 }
-
-
-
-
-@media only screen and (min-width:359px) and (max-width:431px){
-  .sectionMemory article{
-    margin-top: 110px;
-    margin-right: 80px;
-  
+@media(max-width:413px){
+  .sectionMemory  article div{
+    width: 40px; 
+    height: 40px; 
+   
   }
-  .sectionMemory>div {
-    width:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    margin-right: 30px;
-  }
-  .sectionMemory button{
-    margin-top: -170px;
-  }
-  .gift{
-    width: 40px;
-  }
-  .sectionMemory article div{
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 35px; 
-    height: 35px; 
- 
-  }
-  
   .carta{
-    width: 40px;
-  
+    width: 20px;
   }
-  
-
-}
-
-@media only screen and (height:600px) and (width:1024px){
-  .sectionMemory article{
-    margin-top: 50px;
-    margin-right: -80px;
-  }
-  .sectionMemory>div {
-
-    justify-content: center;
-    align-items: center;
-
-  }
-  .sectionMemory button{
-    margin-top: 120px;
-  }
-
-}
-@media only screen and (width:1280px) and (height:800px){
-
-  .sectionMemory article{
-    margin-top: 120px;
-    margin-right: -80px;
-  }
-  .sectionMemory button{
-    margin-left: 100px;
-  }
-
-}
-
-@media (width:280px){
   .gift{
-    width: 50px;
+    width: 25px;
+  }
+  .divbotones{
+    margin-top: 410px;
+    flex-direction: row;
+    gap: 0;
+    margin-left: 20px;
+    align-items: center;
+ 
+
   }
   .sectionMemory article{
-    margin-top: 120px;
-    margin-right: 80px;
-    gap: 25px;
-  }
-  .sectionMemory article div{
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px; 
-    height: 30px; 
- 
-  }
+    margin-left: -180px;
+    
 }
+}
+
+
+
+
+
 
 
 

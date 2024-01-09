@@ -1,0 +1,250 @@
+.sectionppt{
+  width: 100%;
+  height: 90vh;
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #e07f00;
+background-image: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.divizq{
+  /* width: 400px; */
+  display: flex;  
+  flex-direction: column;
+  justify-content: center;
+align-items: center;
+gap: 100px;
+}
+.divmarcador{
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.divmarcador h3{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.divmarcador input{
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  font-weight: bolder;
+  font-size: xx-large;
+}
+.aciertos{
+  color: yellow;
+  font-weight: bolder;
+}
+.fallos{
+
+
+  font-size: 18px;
+  color: blue;
+  font-weight: bolder;
+}
+.divimgs{
+  display: flex;
+  gap: 20px;
+ 
+}
+.divimgs img{
+  width: 100px;
+  cursor: pointer;
+}
+.chosen{
+  border:5px solid black;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.divder{
+ /*  width: 400px; */
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+}
+.divbotones{
+  display: flex;
+  width: auto;
+
+/*   align-items: center;
+  justify-content: center; */
+}
+.divbotones button{
+
+  border: 4px solid black;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-weight: bolder;
+  background-color: transparent;
+  cursor: pointer;
+
+}
+.divrandom{
+  width: 175px;
+  height: 175px;
+  border-radius: 100%;
+}
+.divrandom img {
+width: 175px;
+border-radius: 100%;
+}
+
+@media(max-width:743px){
+  .sectionppt{
+    gap: 20px;
+  }
+  .divizq{
+    justify-content: start;
+    align-items: start;
+  }
+  .divimgs img{
+    width: 50px;
+  }
+  .divrandom img, .divrandom{
+    width: 100px;
+  }
+ 
+}
+@media (max-width:507px){
+  .sectionppt{
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    
+  }
+  .divizq{
+    gap: 0;
+    height: none;
+    margin-left: -80px;
+   
+  }
+  .divder{
+    height: 100px;
+    margin-left: -70px;
+  }
+  .divbotones{
+    flex-direction: column;
+  gap: 5px;
+    margin: 0;
+  }
+ 
+  .divbotones button{
+   
+    padding: 5px 5px;
+  }
+  .divrandom{
+    margin-top: 70px;
+  }
+}
+
+@media(max-width:365px){
+  .divder{
+    margin-right: -70px;
+  }
+  .divizq{
+    margin-right: -70px;
+  }
+  .divbotones{
+    gap: 5px;
+
+  }
+  .divrandomm, .divrandom img{
+    width: 65px;
+
+  }
+  .divbotones button{
+    padding: 5px 5px;
+    margin: 0;
+  }
+  .divbotones{
+    flex-direction: column;
+    gap: 5px;
+    margin: 0;
+  }
+  .divrandom{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+
+@media(max-width:414px){
+
+  .divbotones{
+    flex-direction: column;
+  gap: 5px;
+    margin: 0;
+  }
+  .divbotones button{
+    padding: 5px 5px;
+    margin: 0;
+  }
+}
+@media(width:474px){
+  .sectionppt{
+    justify-content: space-around;
+  }
+}
+@media(width:414px){
+  .sectionppt{
+    justify-content: space-around;
+  }
+}
+@media (width:390px){
+ .sectionppt{
+  justify-content: space-around;
+ }
+}
+@media ( width:430px){
+  .sectionppt{
+    justify-content: space-around;
+  }
+}
+@media (width:412px){
+ .sectionppt{
+  justify-content: space-around;
+ }
+}
+@media (width:360px){
+  .sectionppt{
+    justify-content: space-around;
+  }
+}
+@media (width:768px){
+  .sectionppt{
+    justify-content: space-around;
+  }
+}
+@media (width:1024px) and (height:1366px){
+  .sectionppt{
+    align-items: start;
+    
+  }
+  .divder{
+    margin-top: 300px;
+  }
+  .divizq{
+    margin-top: 300px;
+  }
+}
+
+@media(width:912px) and (height:1368px){
+  .sectionppt{
+    align-items: start;
+    
+  }
+  .divder{
+    margin-top: 300px;
+  }
+  .divizq{
+    margin-top: 300px;
+  }
+
+}

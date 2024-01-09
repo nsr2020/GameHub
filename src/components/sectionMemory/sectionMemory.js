@@ -1,5 +1,5 @@
 import { cartas } from "../../data/cartas";
-import { activarBotonAhorcado, activarBotonAtras, activarBotonBingo, desactivarBotonAhorcado, desactivarBotonAtras, desactivarBotonBingo, desactivarBotonMemory } from "../header/header";
+import { activarBotonAhorcado, activarBotonAtras, activarBotonPPt, desactivarBotonAhorcado, desactivarBotonAtras, desactivarBotonMemory, desactivarBotonPpt } from "../header/header";
 import "./sectionMemory.css";
 
 const sectionMemory = document.createElement("section");
@@ -13,6 +13,14 @@ export const createsectionMemory = (array) => {
   const divBotones = document.createElement("div");
   const botonStart = document.createElement("button");
   const botonStop = document.createElement("button");
+  const divSpan = document.createElement("div")
+  const span = document.createElement("span")
+
+  divBotones.classList.add("divbotones")
+  divSpan.classList.add("divspan")
+  divSpan.append(span)
+  span.textContent = 100 
+  span.classList.add("span")
 
   sectionMemory.classList.add("sectionMemory");
   gift.classList.add("gift");
@@ -28,7 +36,7 @@ export const createsectionMemory = (array) => {
   botonStart.addEventListener("click", () => {
     desactivarBotonAtras()
     desactivarBotonAhorcado()
-    desactivarBotonBingo()
+    desactivarBotonPpt()
     desactivarBotonMemory()
     startGame(array);
     botonStart.style.display ="none"
@@ -38,10 +46,13 @@ export const createsectionMemory = (array) => {
   botonStop.addEventListener("click", () =>{
     activarBotonAhorcado()
     activarBotonAtras()
-    activarBotonBingo()
+    activarBotonPPt()
     resetGame()
+    limpiarIntervalo()
+    
     botonStart.style.display ="flex"
     botonStop.style.display = "none"
+    span.textContent = 100;
   });
 
 
@@ -50,6 +61,7 @@ export const createsectionMemory = (array) => {
 
   sectionMemory.append(gift);
   sectionMemory.append(articleGame);
+  divBotones.append(divSpan)
   sectionMemory.append(divBotones);
 
   document.body.append(sectionMemory);
@@ -68,9 +80,31 @@ export const encenderSectionMemory = () => {
 };
 
 //? Función para iniciar el juego que va enlazada con el botón start, aquí vamos generar un array con todas las imagenes de forma aleatoria y sin repetirse que van a estar dentro de los divs con una opacity 0 
+let intervalo;
+const startContador = (span) => {
+  let timer = parseInt(span.textContent);
+
+   intervalo = setInterval(() => {
+    timer -= 1;
+    span.textContent = timer;
+
+    if (timer <= 0) {
+      limpiarIntervalo()
+      resetGame()
+        setTimeout(()=>{
+        alert("Tiempo agotado")
+      },1000)
+    }
+  }, 1000); 
+};
+
+const limpiarIntervalo = () => {
+  clearInterval(intervalo);
+};
+
 
 const startGame = (array) => {
-  console.log("Inniciando Juego");
+ 
   articleGame.innerHTML = ""; 
   flippedCards = [];
 
@@ -90,6 +124,9 @@ const startGame = (array) => {
     articleGame.append(divCarta);
   });
   articleGame.addEventListener("click", handleCardClick);
+
+  const span = document.querySelector(".span")
+  startContador(span)
   
 };
 
@@ -123,7 +160,7 @@ const flipCard = (div) => {
     id,
     index: div.dataset.index,
   });
-  console.log("Volteando carta");
+  
 };
 
 
@@ -143,7 +180,7 @@ const checkMatch = () => {
     const showedCards = articleGame.querySelectorAll(".carta.showed");
 
     if (allCards.length === showedCards.length ) {
-     
+     limpiarIntervalo()
       setTimeout(() => {
         alert("¡Enhorabuena! Has completado el juego.");
       }, 1000);
