@@ -6,7 +6,51 @@
   justify-content: space-around;
   background-color: #e07f00;
 background-image: url("https://www.transparenttextures.com/patterns/brick-wall-dark.png");
+position: relative;
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+.psecret{
+  position: absolute;
+  top: 50px;
+  /* left: -800px; */
+  left: 100px;
+  opacity: 0;
+  font-weight: bolder;
+  font-size: x-large;
+  color: aqua;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ 
+}
+
+.aparecer{
+  animation: aparecer 2s ease-in forwards,desaparecer 2s ease-out forwards 6s;
+}
+@keyframes aparecer {
+/*   0%{
+    left:-800px;
+  }
+  25%{
+    left:-400px;
+  }
+  50%{
+    left: -200px;
+  }
+  75%{
+    left:0px
+  }
+  100%{
+    left: 200px;
+  } */
+  0%{letter-spacing:-.2em;transform:translateZ(-700px) translateY(-100px);opacity:0}40%{opacity:.6}100%{transform:translateZ(0) translateY(0);opacity:1}
+  
+}
+@keyframes desaparecer {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .divizq{
@@ -37,9 +81,8 @@ gap: 100px;
   color: yellow;
   font-weight: bolder;
 }
+
 .fallos{
-
-
   font-size: 18px;
   color: blue;
   font-weight: bolder;
@@ -52,6 +95,16 @@ gap: 100px;
 .divimgs img{
   width: 100px;
   cursor: pointer;
+ 
+}
+
+.rotacion{
+  animation: rotacion 0.7s infinite ease-in-out;
+}
+@keyframes rotacion{
+  0%{transform:rotateX(0)}
+  100%{transform:rotateX(-360deg)}
+ 
 }
 .chosen{
   border:5px solid black;
@@ -83,8 +136,23 @@ gap: 100px;
   font-weight: bolder;
   background-color: transparent;
   cursor: pointer;
-
+  
 }
+
+.divbotones button:hover{
+  animation: shake 0.8s linear both;
+}
+
+@keyframes shake{
+  0%,100%{transform:rotate(0deg);
+    transform-origin:50% 50%}
+    10%{transform:rotate(8deg)}
+    20%,40%,60%{transform:rotate(-10deg)}
+    30%,50%,70%{transform:rotate(10deg)}
+    80%{transform:rotate(-8deg)}
+    90%{transform:rotate(8deg)}
+}
+
 .divrandom{
   width: 175px;
   height: 175px;
@@ -93,6 +161,17 @@ gap: 100px;
 .divrandom img {
 width: 175px;
 border-radius: 100%;
+}
+.vuelta{
+  animation: vuelta 0.4s linear both;
+}
+@keyframes vuelta{
+  0%{transform:scale(1) rotateZ(0)
+  }
+  50%{transform:scale(2) rotateZ(180deg)
+  }
+  100%{transform:scale(1) rotateZ(360deg)
+  }
 }
 
 @media(max-width:743px){

@@ -7,6 +7,9 @@ export const sectionppt = document.createElement("section")
 export const createSectionPpt = () =>{
   sectionppt.innerHTML =""
   sectionppt.classList.add("sectionppt")
+  const psecret = document.createElement("p")
+  psecret.textContent = "5 aciertos para ganar, suerte!!!"
+  psecret.classList.add("psecret")
 
   const divIzq = document.createElement("div")
   divIzq.classList.add("divizq")
@@ -21,6 +24,10 @@ export const createSectionPpt = () =>{
   inputAciertos.value = 0
   inputFallos.textContent = 0;
   inputFallos.value =0
+
+  inputAciertos.disabled= true;
+  inputFallos.disabled = true;
+ 
 
   inputAciertos.classList.add("inputAciertos")
   inputFallos.classList.add("inputFallos")
@@ -89,7 +96,7 @@ export const createSectionPpt = () =>{
     divImgRandom.append(imgRandom)
 
     divDer.append(divImgRandom)
-
+  sectionppt.append(psecret)
   sectionppt.append(divIzq)
   sectionppt.append(divDer)
   document.body.append(sectionppt)
@@ -103,6 +110,9 @@ export const createSectionPpt = () =>{
     desactivarBotonPpt()
    
     startPpt(imgRandom)
+    psecret.classList.add("aparecer")
+   
+    
 
   })
 
@@ -115,8 +125,12 @@ export const createSectionPpt = () =>{
     createSectionPpt()
     limpiarContadores()
     encenderImagenes()
+    psecret.classList.remove("aparecer")
+    desactivarRotacion()
+    
     
   })
+
 
 }
 
@@ -130,6 +144,21 @@ export const encenderSectionPpt = () => {
   sectionppt.innerHTML = "";
 };
 
+const activarRotation = () =>{
+  const imgs = document.querySelectorAll(".imgs");
+  imgs.forEach((img)=>{
+    img.classList.remove("chosen")
+    img.classList.add("rotacion")
+  })
+
+}
+const desactivarRotacion = () =>{
+  const imgs = document.querySelectorAll(".imgs");
+  imgs.forEach((img)=>{
+    img.classList.remove("rotacion")
+  })
+}
+
 
 const startPpt = (imagen) =>{
 
@@ -140,7 +169,7 @@ const startPpt = (imagen) =>{
   imagen.src ="https://res.cloudinary.com/dnju3aw4b/image/upload/v1704796772/ppt/arcoiris_ocxzir.gif"
 
   setTimeout(() => {
-
+      imagen.classList.add("vuelta")
       imagen.src = selectedImage;
     const divContainer = document.querySelector(".divrandom");
     divContainer.innerHTML = ""; 
@@ -157,7 +186,6 @@ let fallos = 0;
 
 const comprobarImg = (index) => {
   const imgs = document.querySelectorAll(".imgs");
-  
 
   imgs.forEach((img) => {
     if (img.classList.contains("chosen") && img.classList.contains(index)) {
@@ -172,13 +200,12 @@ const comprobarImg = (index) => {
     setTimeout(() => {
       alert("Felicidades, has conseguido acertar 5 imágenes!!!");
       endGame()
+      activarRotation()
     }, 1000);
   }
 
-  if (fallos === 5) {
+  if (fallos === 10) {
     actualizarContadores();
-    
-
     setTimeout(() => {
       alert("Lo sentimos, no has conseguido ganar!!!");
       endGame();
