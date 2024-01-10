@@ -6,12 +6,13 @@
   width: 100%;
   height: 90vh;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction:column;
   justify-content: center;
   align-items: center;
   background-color: #e32600;
   background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
   overflow: hidden;
+  gap: 35px;
 }
 
 .gift{
@@ -33,7 +34,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(4, 1fr);
-  gap: 25px; 
+  gap: 15px; 
  
 
 }
@@ -62,11 +63,11 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-leather
   width: 200px;
   height: 15vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 25px;
-  margin-left: 20px;
+  gap: 35px;
+
 }
 .divspan{
   margin-top: 20px;
@@ -133,13 +134,55 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-leather
   animation: changeColor 2seg infinite;
 }
 
+
+@media(max-width:900px){
+  .sectionMemory{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 50px;
+  }
+  .sectionMemory article{
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-left: 30px;
+    padding: 20px;
+  }
+  .gift{
+    display: none;
+  }
+  .divbotones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+  }
+
+}
 @media(max-width:671px){
   .sectionMemory article{
-    margin-left: -30px;
+    margin-left: 0px;
+    margin-top: -50px;
+    justify-content: center;
+    align-items: center;
+  }
+  .sectionMemory article div{
+    width: 50px;
+    height: 50px;
   }
 
   .divbotones{
-    margin-left: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 150px;
+    margin-top: 50px;
   }
 
   .sectionMemory article{
@@ -147,38 +190,106 @@ background-image: url("https://www.transparenttextures.com/patterns/dark-leather
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
     gap: 15px; 
-    margin-top: -100px;
+ 
    
   
   }
 
   
 }
-@media(max-width:413px){
-  .sectionMemory  article div{
-    width: 40px; 
-    height: 40px; 
-   
-  }
-  .carta{
-    width: 20px;
-  }
-  .gift{
-    width: 25px;
-  }
-  .divbotones{
-    margin-top: 410px;
-    flex-direction: row;
-    gap: 0;
-    margin-left: 20px;
-    align-items: center;
- 
 
+
+@media(max-width:540px){
+  .sectionMemory{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
   }
   .sectionMemory article{
-    margin-left: -180px;
-    
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-left: 30px;
+    margin-top: 0px;
+  }
+  .gift{
+    display: none;
+  }
+  .divbotones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 150px;
+  }
+  .divbotones button{
+    padding: 5px;
+  }
+
 }
+
+
+@media(max-width:431px){
+  .sectionMemory{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    gap: 50px;
+  }
+  .sectionMemory article{
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-left: 30px;
+  }
+  .gift{
+    display: none;
+  }
+  .divbotones{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 150px;
+  }
+  
+}
+
+@media(max-width:413px){
+  .sectionMemory{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    gap: 50px;
+  }
+  .sectionMemory article{
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-left: 30px;
+  }
+  .gift{
+    display: none;
+  }
+  .divbotones{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: -20px;
+  }
+}
+@media(max-width:280px){
+  .sectionMemory article{
+    margin-right: 20px;
+  }
 }
 
 
