@@ -173,8 +173,61 @@ border-radius: 100%;
   100%{transform:scale(1) rotateZ(360deg)
   }
 }
+@media (max-width:800px){
+  .sectionppt{
+    flex-direction: column-reverse;
+  }
+  .divder{
+    width: 100%;
+    justify-content: space-around;
+  }
+  .divizq{
+    width: 100%;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  .divmarcador{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .divimgs{
+    width: 100%;
+    justify-content: space-around;
+  }
 
-@media(max-width:743px){
+}
+
+@media (max-width:580px){
+  .divizq img{
+    width: 75px;
+  }
+  .divder{
+    flex-direction: column;
+    gap: 0;
+  }
+  .divrandom{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .divrandom img{
+    width: 120px;
+  }
+  .divbotones{
+    width: 100%;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    justify-content: space-around;
+  }
+
+}
+/* @media(max-width:743px){
   .sectionppt{
     gap: 20px;
   }
@@ -189,8 +242,8 @@ border-radius: 100%;
     width: 100px;
   }
  
-}
-@media (max-width:507px){
+} */
+/* @media (max-width:507px){
   .sectionppt{
     flex-direction: column;
     gap: 50px;
@@ -221,8 +274,8 @@ border-radius: 100%;
     margin-top: 70px;
   }
 }
-
-@media(max-width:365px){
+ */
+/* @media(max-width:365px){
   .divder{
     margin-right: -70px;
   }
@@ -252,9 +305,9 @@ border-radius: 100%;
     justify-content: center;
     margin-top: 10px;
   }
-}
+} */
 
-@media(max-width:414px){
+/* @media(max-width:414px){
 
   .divbotones{
     flex-direction: column;
@@ -280,28 +333,28 @@ border-radius: 100%;
  .sectionppt{
   justify-content: space-around;
  }
-}
-@media ( width:430px){
+} */
+/* @media ( width:430px){
   .sectionppt{
     justify-content: space-around;
   }
-}
-@media (width:412px){
+} */
+/* @media (width:412px){
  .sectionppt{
   justify-content: space-around;
  }
-}
-@media (width:360px){
+} */
+/* @media (width:360px){
   .sectionppt{
     justify-content: space-around;
   }
-}
-@media (width:768px){
+} */
+/* @media (width:768px){
   .sectionppt{
     justify-content: space-around;
   }
-}
-@media (width:1024px) and (height:1366px){
+} */
+/* @media (width:1024px) and (height:1366px){
   .sectionppt{
     align-items: start;
     
@@ -312,9 +365,9 @@ border-radius: 100%;
   .divizq{
     margin-top: 300px;
   }
-}
+} */
 
-@media(width:912px) and (height:1368px){
+/* @media(width:912px) and (height:1368px){
   .sectionppt{
     align-items: start;
     
@@ -326,4 +379,4 @@ border-radius: 100%;
     margin-top: 300px;
   }
 
-}
+} */
